@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>750F9C25-1E3F-4603-930A-4E89658ED204</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ios_demo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0AF37D04C68781A0697AF0B04E53009688312ABA</key>
+		<string>github.com:andy0323/JXException.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>demo/ios_demo/ios_demo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0AF37D04C68781A0697AF0B04E53009688312ABA</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:andy0323/JXException.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>0AF37D04C68781A0697AF0B04E53009688312ABA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0AF37D04C68781A0697AF0B04E53009688312ABA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>JXException</string>
+		</dict>
+	</array>
+</dict>
+</plist>
