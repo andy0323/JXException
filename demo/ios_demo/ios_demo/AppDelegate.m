@@ -20,7 +20,11 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
 
-    [JXExceptionManager shareInstance];
+    [[JXExceptionManager shareInstance] registExceptionHandle:^(JXExceptionModel *exceptionModel) {
+        
+        NSLog(@"异常捕获成功");
+        
+    }];
 
     
     UIButton *crashButton = [UIButton crashButtonWithFrame:CGRectMake(50, 50, 200, 40)];

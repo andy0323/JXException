@@ -14,6 +14,7 @@
 		A1B1D57F1A5D86E10012C6FE /* ios_demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B1D57E1A5D86E10012C6FE /* ios_demoTests.m */; };
 		A1B1D58D1A5D89AA0012C6FE /* UIButton+CrashButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B1D58C1A5D89AA0012C6FE /* UIButton+CrashButton.m */; };
 		A1B1D5911A5D8CE10012C6FE /* JXExceptionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B1D5901A5D8CE10012C6FE /* JXExceptionManager.m */; };
+		A1B1D5941A5DFAFE0012C6FE /* JXExceptionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B1D5931A5DFAFE0012C6FE /* JXExceptionModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,8 @@
 		A1B1D58C1A5D89AA0012C6FE /* UIButton+CrashButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CrashButton.m"; sourceTree = "<group>"; };
 		A1B1D58F1A5D8CE10012C6FE /* JXExceptionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXExceptionManager.h; sourceTree = "<group>"; };
 		A1B1D5901A5D8CE10012C6FE /* JXExceptionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXExceptionManager.m; sourceTree = "<group>"; };
+		A1B1D5921A5DFAFE0012C6FE /* JXExceptionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXExceptionModel.h; sourceTree = "<group>"; };
+		A1B1D5931A5DFAFE0012C6FE /* JXExceptionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXExceptionModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 			children = (
 				A1B1D58F1A5D8CE10012C6FE /* JXExceptionManager.h */,
 				A1B1D5901A5D8CE10012C6FE /* JXExceptionManager.m */,
+				A1B1D5921A5DFAFE0012C6FE /* JXExceptionModel.h */,
+				A1B1D5931A5DFAFE0012C6FE /* JXExceptionModel.m */,
 			);
 			name = JXExceptionManager;
 			path = ../../JXExceptionManager;
@@ -232,6 +237,7 @@
 				A1B1D56E1A5D86E10012C6FE /* AppDelegate.m in Sources */,
 				A1B1D56B1A5D86E10012C6FE /* main.m in Sources */,
 				A1B1D58D1A5D89AA0012C6FE /* UIButton+CrashButton.m in Sources */,
+				A1B1D5941A5DFAFE0012C6FE /* JXExceptionModel.m in Sources */,
 				A1B1D5911A5D8CE10012C6FE /* JXExceptionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

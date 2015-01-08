@@ -7,9 +7,26 @@
 //
 
 #import "JXExceptionManager.h"
+#import "JXExceptionModel.h"
+#import <objc/message.h>
 static JXExceptionManager *_instance = nil;
+
 @implementation JXExceptionManager
-/// 单例
+
+- (id)init
+{
+    if (self = [super init]) {
+        NSSetUncaughtExceptionHandler(&UncaughtExceptionHandler);
+    }
+    return self;
+}
+
+#pragma mark - 
+#pragma mark 共有函数
+
+/**
+ *  设置单例
+ */
 + (JXExceptionManager *)shareInstance
 {
     static JXExceptionManager *_instance;
@@ -20,48 +37,39 @@ static JXExceptionManager *_instance = nil;
     return _instance;
 }
 
-- (id)init
+/**
+ *  自定义设置异常处理行为
+ *
+ *  @param exceptionHandler 异常行为处理
+ */
+- (void)registExceptionHandle:(JXExceptionHandler)exceptionHandler
 {
-    if (self = [super init]) {
-        NSSetUncaughtExceptionHandler(&UncaughtExceptionHandler);
-    }
-    return self;
+    _exceptionHandler = [exceptionHandler copy];
 }
 
-/// 取消异常报错
+/**
+ *  取消异常报错
+ */
 + (void)cleanHelper {
     _instance = nil;
     NSSetUncaughtExceptionHandler(NULL);
 }
 
-void UncaughtExceptionHandler(NSException *exception) {
-    // 相关信息
-    NSArray *arr = [exception callStackSymbols];
-    // 异常原因
-    NSString *reason = [exception reason];
-    // 异常名称
-    NSString *name = [exception name];
-    // 时间
-    NSString *date = [[NSDate date] description];
+#pragma mark -
+#pragma mark 异常捕获
+
+void UncaughtExceptionHandler(NSException *exception)
+{
+    JXExceptionModel *crashInfo = [[JXExceptionModel alloc] initWithException:exception];
     
-    NSString *logMsg = [NSString stringWithFormat:
-                        @"======== 异常崩溃详情 ========= \n"
-                        "time:%@ ============================\n"
-                        "name:%@\n"
-                        "reason:\n"
-                        "%@\n"
-                        "callStackSymbols:\n"
-                        "%@",
-                        date,
-                        name,
-                        reason,
-                        [arr componentsJoinedByString:@"\n"]];
-    
-    // 异常信息
-    logMsg = [logMsg stringByAppendingString:@"\n"];
-    
-    // 打印异常信息
-    NSLog(@"\n%@", logMsg);
+    ((void(*)(id, SEL, id))objc_msgSend)([JXExceptionManager shareInstance], @selector(crashCallback:), crashInfo);
+}
+
+- (void)crashCallback:(JXExceptionModel *)exceptionModel
+{
+    if (_exceptionHandler) {
+        _exceptionHandler(exceptionModel);
+    }
 }
 
 @end
